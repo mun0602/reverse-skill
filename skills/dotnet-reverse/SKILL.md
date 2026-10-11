@@ -90,6 +90,7 @@ diec target.exe                        # Detect It Easy CLI
 
 | 混淆器 | 特征 | de4dot 处理 |
 |--------|------|------------|
+| AgileDotNet | 方法体是 `ret` / `ldnull; ret`，存在 `<AgileDotNetRT>::Initialize`，资源名是 GUID | 不要跑 de4dot。静态 IL 不是业务逻辑，要在 Windows .NET Framework 上做运行时 dump |
 | ConfuserEx (1.0.0 / 2.x) | `<module>` anti-tamper、控制流变形、字符串加密 | `de4dot target.exe` 通常自动识别 |
 | SmartAssembly | `circular`/`string encoding`、资源压缩 | `de4dot target.exe` |
 | Babel.NET | 方法体加密、控制流 | `de4dot target.exe` |
